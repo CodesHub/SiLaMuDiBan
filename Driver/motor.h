@@ -10,11 +10,12 @@
 class Motor {
 	public:
 		int rpm;
+		int pwm; //add @jinhong
 		static int counts_per_rev_;
 		Motor(Motor_TypeDef _motor, uint32_t _arr, uint32_t _psc);
 		void init();
 		void spin(int pwm);
-
+		
 	private:
 		Motor_TypeDef motor;
 		uint32_t arr;

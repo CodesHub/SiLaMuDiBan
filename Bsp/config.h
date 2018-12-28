@@ -124,15 +124,15 @@ typedef enum {
 
 #define ENCODERn                    2
 
-#define RIKI_ENCODER2_A_PIN         GPIO_Pin_0
-#define RIKI_ENCODER2_B_PIN         GPIO_Pin_1
-#define RIKI_ENCODER2_GPIO_PORT     GPIOA
-#define RIKI_ENCODER2_GPIO_CLK      RCC_APB2Periph_GPIOA
+//#define RIKI_ENCODER2_A_PIN         GPIO_Pin_0
+//#define RIKI_ENCODER2_B_PIN         GPIO_Pin_1
+//#define RIKI_ENCODER2_GPIO_PORT     GPIOA
+//#define RIKI_ENCODER2_GPIO_CLK      RCC_APB2Periph_GPIOA
 
-#define RIKI_ENCODER1_A_PIN         GPIO_Pin_6
-#define RIKI_ENCODER1_B_PIN         GPIO_Pin_7
-#define RIKI_ENCODER1_GPIO_PORT     GPIOB
-#define RIKI_ENCODER1_GPIO_CLK      RCC_APB2Periph_GPIOB
+//#define RIKI_ENCODER1_A_PIN         GPIO_Pin_6
+//#define RIKI_ENCODER1_B_PIN         GPIO_Pin_7
+//#define RIKI_ENCODER1_GPIO_PORT     GPIOB
+//#define RIKI_ENCODER1_GPIO_CLK      RCC_APB2Periph_GPIOB
 
 #define RIKI_ENCODER2_TIM           TIM5
 #define RIKI_ENCODER2_TIM_CLK       RCC_APB1Periph_TIM5
@@ -140,6 +140,33 @@ typedef enum {
 #define RIKI_ENCODER1_TIM           TIM4
 #define RIKI_ENCODER1_TIM_CLK       RCC_APB1Periph_TIM4
 
+//////////////////////////////////////////////// add  将AB相都置为一样 @jinhong
+#define RIKI_ENCODER1_A_PIN         GPIO_Pin_6
+#define RIKI_ENCODER1_B_PIN         RIKI_ENCODER1_A_PIN
+#define RIKI_ENCODER1_GPIO_PORT     GPIOB
+#define RIKI_ENCODER1_GPIO_CLK      RCC_APB2Periph_GPIOB
+#define RIKI_ENCODER1_A_EXTI_LINE   EXTI_Line6
+#define RIKI_ENCODER1_B_EXTI_LINE   RIKI_ENCODER1_A_EXTI_LINE
+#define RIKI_ENCODER1_A_IRQ         EXTI9_5_IRQn
+#define RIKI_ENCODER1_B_IRQ         RIKI_ENCODER1_A_IRQ
+#define RIKI_ENCODER1_A_EXTI_PORT   GPIO_PortSourceGPIOB
+#define RIKI_ENCODER1_B_EXTI_PORT   RIKI_ENCODER1_A_EXTI_PORT
+#define RIKI_ENCODER1_A_EXTI_PIN    GPIO_PinSource6
+#define RIKI_ENCODER1_B_EXTI_PIN    RIKI_ENCODER1_A_EXTI_PIN
+
+#define RIKI_ENCODER2_A_PIN         GPIO_Pin_0
+#define RIKI_ENCODER2_B_PIN         RIKI_ENCODER2_A_PIN
+#define RIKI_ENCODER2_GPIO_PORT     GPIOA
+#define RIKI_ENCODER2_GPIO_CLK      RCC_APB2Periph_GPIOA
+#define RIKI_ENCODER2_A_EXTI_LINE   EXTI_Line0
+#define RIKI_ENCODER2_B_EXTI_LINE   RIKI_ENCODER2_A_EXTI_LINE
+#define RIKI_ENCODER2_A_IRQ         EXTI0_IRQn
+#define RIKI_ENCODER2_B_IRQ         RIKI_ENCODER2_A_IRQ
+#define RIKI_ENCODER2_A_EXTI_PORT   GPIO_PortSourceGPIOA
+#define RIKI_ENCODER2_B_EXTI_PORT   RIKI_ENCODER2_A_EXTI_PORT
+#define RIKI_ENCODER2_A_EXTI_PIN    GPIO_PinSource0
+#define RIKI_ENCODER2_B_EXTI_PIN    RIKI_ENCODER2_A_EXTI_PIN
+//////////////////////////////////////////////////////
 
 /** I2C Config **/
 
