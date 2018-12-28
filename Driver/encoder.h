@@ -17,6 +17,9 @@ class Encoder {
 		uint16_t last_timer;
 		/* last difference between timer reads */
 		int16_t last_timer_diff;
+	
+		//±àÂëÆ÷¼ÆÊı @jinhong
+		int en_cnt;
 
 	private:
 		Encoder_TypeDef encoder;

@@ -73,8 +73,11 @@ void move_base()
 	
 	int current_rpm1 = encoder1.getRPM();
     int current_rpm2 = encoder2.getRPM();
-	motor1.spin(motor1_pid.compute(req_rpm.motor1, current_rpm1));
-    motor2.spin(motor2_pid.compute(req_rpm.motor2, current_rpm2));
+	
+	motor1.pwm = motor1_pid.compute(req_rpm.motor1, current_rpm1);
+	motor2.pwm = motor2_pid.compute(req_rpm.motor2, current_rpm2);
+	motor1.spin(motor1.pwm);
+    motor2.spin(motor2.pwm);
 	
 	Kinematics::velocities current_vel;
 	current_vel = kinematics.getVelocities(current_rpm1, current_rpm2);
